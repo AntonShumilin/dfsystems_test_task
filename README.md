@@ -34,7 +34,7 @@ PARAMS text
 create table vk_group (  
 ID BIGSERIAL not null primary key,  
 group_info text not null,  
-request_id INT,  
+request_id BIGINT,  
  CONSTRAINT fk_vk_request  
     FOREIGN KEY(request_id)  
     REFERENCES vk_request(id)  
