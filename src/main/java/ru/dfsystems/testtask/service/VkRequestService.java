@@ -1,10 +1,8 @@
 package ru.dfsystems.testtask.service;
 
 import com.jayway.jsonpath.JsonPath;
-import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -12,11 +10,6 @@ import java.util.Map;
 @Service
 @Getter
 public class VkRequestService {
-
-    @Value("${APP_ID}")
-    private String appId;
-    @Value("${CLIENT_SECRET}")
-    private String clientSecret;
 
     public String requestCurrentUser (VkRequestSettings settings) throws ClientException {
         String response =  settings

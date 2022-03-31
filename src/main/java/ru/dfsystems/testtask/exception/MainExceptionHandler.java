@@ -13,12 +13,14 @@ public class MainExceptionHandler {
     @ExceptionHandler(MainServiceException.class)
     @ResponseBody
     public ResponseEntity<ErrorDto> handleMainServiceException(MainServiceException mainEx) {
+        log.error(mainEx.getMessage());
         return ResponseEntity.badRequest().body(new ErrorDto(mainEx.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseEntity<ErrorDto> handleOtherException(Exception ex) {
+        log.error(ex.getMessage());
         return ResponseEntity.internalServerError().body(new ErrorDto(ex.getMessage()));
     }
 }
