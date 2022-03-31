@@ -1,0 +1,5 @@
+APP_ID=set_your_app_id
+CLIENT_SECRET=set_your_client_secret
+POSTGRES_URL=set_your_jdbc_url
+POSTGRES_USER=set_you_db_user
+POSTGRES_PSW=set_yor_db_password
