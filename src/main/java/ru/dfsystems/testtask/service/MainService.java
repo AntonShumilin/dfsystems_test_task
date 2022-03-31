@@ -1,7 +1,6 @@
 package ru.dfsystems.testtask.service;
 
 import com.jayway.jsonpath.JsonPath;
-import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
