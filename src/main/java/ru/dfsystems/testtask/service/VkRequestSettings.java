@@ -8,6 +8,7 @@ import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.httpclient.HttpTransportClient;
 import com.vk.api.sdk.objects.UserAuthResponse;
 import lombok.Getter;
+import ru.dfsystems.testtask.exception.MainServiceException;
 
 @Getter
 public class VkRequestSettings {
@@ -39,7 +40,7 @@ public class VkRequestSettings {
                     .execute();
             return new UserActor(authResponse.getUserId(), authResponse.getAccessToken());
         } catch (ApiException | ClientException e) {
-            throw new RuntimeException("Error getting VK token", e);
+            throw new MainServiceException("Error getting VK token", e);
         }
     }
 }

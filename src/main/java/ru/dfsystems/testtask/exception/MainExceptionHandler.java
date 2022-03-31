@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Slf4j
 @ControllerAdvice
-public class MvcExceptionHandler {
+public class MainExceptionHandler {
 
     @ExceptionHandler(MainServiceException.class)
     @ResponseBody
-    public ResponseEntity<String> handleMainServiceException(MainServiceException mainEx) {
-        return ResponseEntity.badRequest().body(mainEx.getMessage());
+    public ResponseEntity<ErrorDto> handleMainServiceException(MainServiceException mainEx) {
+        return ResponseEntity.badRequest().body(new ErrorDto(mainEx.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ResponseEntity<String> handleOtherException(Exception ex) {
-        return ResponseEntity.internalServerError().body(ex.getMessage());
+    public ResponseEntity<ErrorDto> handleOtherException(Exception ex) {
+        return ResponseEntity.internalServerError().body(new ErrorDto(ex.getMessage()));
     }
 }
