@@ -125,6 +125,7 @@ public class MainService {
                 .map(Object::toString)
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
+//      Исключаем дубликаты
         LinkedHashMap<Integer, Map<String, Object>> result = new LinkedHashMap<>();
         for (Integer id : friendsIdList) {
             String responseString = vkRequestService.requestGroupsByUserId(id, settings);

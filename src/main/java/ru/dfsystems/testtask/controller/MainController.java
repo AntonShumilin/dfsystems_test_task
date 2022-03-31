@@ -72,6 +72,7 @@ public class MainController {
     }
 
     private void sendRedirectResponse(HttpServletResponse response, String substring, String redirectUri) throws IOException {
+//        VK странно работает с кириллицей, поэтому юникод
         String state = StringUtils.hasText(substring) ?
                 "&" + "state=" + AppUtils.toUnicode(substring)
                 : "";
