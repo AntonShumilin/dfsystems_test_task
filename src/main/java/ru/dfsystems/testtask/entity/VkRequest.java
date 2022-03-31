@@ -1,13 +1,10 @@
 package ru.dfsystems.testtask.entity;
 
 
-
 import lombok.*;
-import ru.dfsystems.testtask.entity.VkGroup;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,5 +24,5 @@ public class VkRequest {
     @Column
     private String params;
     @OneToMany(mappedBy = "request", cascade = CascadeType.ALL)
-    List<VkGroup> vkGroupsList = new ArrayList<>();
+    List<VkGroup> vkGroupsList;
 }
