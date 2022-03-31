@@ -40,6 +40,10 @@ jib {
     to {
         image = 'dfsystems_test_task:AntonShumilin'
     }
+    container {
+        ports = ['8080']
+        args = ['']
+    }
 }
 
 tasks.jib.dependsOn(build)
